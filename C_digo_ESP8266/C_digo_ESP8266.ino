@@ -192,51 +192,51 @@ client.println("<head><meta name=\"viewport\" content=\"width=device-width, init
 client.println("<meta charset=\"UTF-8\">");
 client.println("<link rel=\"icon\" href=\"data:,\">");
 client.println("<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.0.4/jscolor.min.js\"></script>");
-client.println("<title> Hmm Sonin Bom </title>");
+client.println("<title> CromoIT </title>");
 // CSS to style the on/off buttons 
 client.println("<style>@import url('https://fonts.googleapis.com/css2?family=Lato&family=Nunito:wght@400;700&display=swap');");
 client.println(" *{margin: 0; padding: 0;}html{ scroll-behavior: smooth;}");
 client.println("body { font-family: 'Lato', sans-serif; max-width: 1220px; margin: auto; background-color: #F8F8FF; color: #101010; font-size: 16px; line-height: 24px;}");
 client.println("header {display: flex; justify-content: space-between; align-items: center; padding: 25px 0;}");
 client.println("h1{ font-family: 'Nunito', sans-serif;}header nav {display: flex; align-items: center;}");
-client.println("header nav ul{ display: flex; gap: 15px; flex-wrap: wrap; list-style: none;}nav ul li a { display: flex; flex-shrink: 1; flex-grow: 1; box-shadow: 0px 2px 2px rgba(220, 220, 220, 0.1);}");
-client.println("nav a{text-decoration: none; padding: 4px 8px; border: 2px #BFBBBB solid; border-radius: 3px; font-family: 'Nunito', sans-serif; color: #101010;}");
+client.println("header nav ul{ display: flex; gap: 15px; flex-wrap: wrap; list-style: none;}nav ul li a { display: flex; flex-shrink: 1; flex-grow: 1; box-shadow: 0px 2px 2px #dcdcdc;}");
+client.println("nav a{text-decoration: none; padding: 4px 8px; border: 2px #BFBBBB solid; border-radius: 3px; font-family: 'Nunito', sans-serif; font-weight: 700; color: #101010;}");
 client.println("main{ margin: 25px 0;}section{ margin-bottom: 15px;}section h2 {margin-bottom: 1px;font-family: 'Nunito', sans-serif;}");
 client.println("#testar{margin-bottom: 15px} #botoes{display: grid; grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr;} #botoes div{margin-bottom: 5px;}");
 
 client.println(".buttonRed { background-color: #ff0000; border: none; color: white; padding: 16px 40px; border-radius: 4px;");
-client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer;}");
+client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
 
 client.println(".buttonGreen { background-color: #008000; border: none; color: white; padding: 16px 40px; border-radius: 4px;");
-client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer;}");
+client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
 
 client.println(".buttonBlue { background-color: #0055ff; border: none; color: white; padding: 16px 40px; border-radius: 4px;");
-client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer;}");
+client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
 
 client.println(".buttonOrange { background-color: #ff8c00; border: none; color: white; padding: 16px 40px; border-radius: 4px;");
-client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer;}");
+client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
 
 client.println(".buttonMagenta { background-color: #a020f0; border: none; color: white; padding: 16px 40px; border-radius: 4px;");
-client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer;}");
+client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
 
 client.println(".buttonYellow { background-color: #feeb36; border: none; color: white; padding: 16px 40px; border-radius: 4px;");
-client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer;}");
+client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
 
 client.println(".buttonWhite { background-color: #ffffff; border: 2px #BFBBBB solid; padding: 16px 40px; border-radius: 4px;");
-client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer;}");
+client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
 
 client.println(".buttonTurquesa { background-color: #00cece; border: none; color: white; padding: 16px 40px; border-radius: 4px;");
-client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer;}");
+client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
 
 client.println(".buttonOff { background-color: #77878A; border: none; color: white; padding: 16px 40px; border-radius: 4px;");
-client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer;}");
+client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
 
 client.println("@media screen and (max-width: 1220px){body{margin:0 50px; max-width: 720px; font-size: 0.9em;}}");
 client.println("@media screen and (max-width: 770px) {header{flex-direction: column; align-items: center; gap: 10px;} #botoes {display: flex; flex-direction: column; align-items: center; justify-content: center;} #botoes div {display: flex; flex-direction: column; align-items: center; justify-content: center;}}");
 client.println("@media screen and (max-width: 570px){header nav ul{ flex-direction: column; align-items: center;}}</style></head>");
 
 // Web Page Heading
-client.println("<body><header><h1> Hmm Sonin Bom</h1><nav><ul><li><a href=\"#proposito\">""PROPÓSITO</a></li><li><a href=\"#testar\">""VAMOS TESTAR? :D</a></li><li><a href=\"#sobre\">""SOBRE NÓS</a></li><li><a href=\"#integrantes\">""INTEGRANTES</a></li></ul></nav></header>");
+client.println("<body><header><h1> CromoIT</h1><nav><ul><li><a href=\"#proposito\">""PROPÓSITO</a></li><li><a href=\"#testar\">""VAMOS TESTAR? :D</a></li><li><a href=\"#sobre\">""SOBRE NÓS</a></li><li><a href=\"#integrantes\">""INTEGRANTES</a></li></ul></nav></header>");
 
 //MAIN
 client.println("<main><section><h2 id=\"proposito\">"" Nosso Propósito</h2><p>Esse projeto foi pensado em como nós podemos melhorar a qualidade do nosso sono no geral, já que, nos dias atuais, nós estamos tendo cada vez mais dificuldade de ter uma boa noite de sono, o que pode alterar todo o nosso humor durante o dia, além de alterar a nossa produtividade.</p></section>");
