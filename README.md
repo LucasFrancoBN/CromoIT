@@ -15,11 +15,11 @@
 <!-- FOTOS -->
 <div id="fotos">
     <h2> 📸 Fotos </h2>
-        <img scr="./Images/PC.jpeg">
+        <img src="./Images/PC.jpeg">
         <br><br>
        
  <h2> 📱 Responsivo </h2>
-        <img scr="./Images/Responsivo.jpeg">
+        <img src="./Images/Responsivo.jpeg" height="800px">
         <br><br>
         
    <h2 id="GIFs"> 🎥 GIFs </h2>
