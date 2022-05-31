@@ -197,15 +197,15 @@ client.println("<title> CromoIT </title>");
 //Estilo da pagina (CSS) 
 client.println("<style>@import url('https://fonts.googleapis.com/css2?family=Lato&family=Nunito:wght@400;700&display=swap');");
 client.println(" *{margin: 0; padding: 0;}html{ scroll-behavior: smooth;}");
-client.println("body { font-family: 'Lato', sans-serif; max-width: 1220px; margin: auto; background-color: #F8F8FF; color: #101010; font-size: 16px; line-height: 24px;}");
-client.println("header {display: flex; justify-content: space-between; align-items: center; padding: 25px 0;}");
+client.println("body { font-family: 'Lato', sans-serif; max-width: 1235px; margin: auto; background-color: #FCFBFA; color: #2E2E28; font-size: 16px; line-height: 24px; border: 2px #aaaaaa17 solid; border-radius: 5px; padding: 15px; margin-top: 15px;}");
+client.println("header {display: flex; justify-content: space-between; padding: 5 0 25px 0; border-bottom: 2px #aaaaaa17 solid; }");
 client.println("header .logo{ display: flex; align-items: center;}");
 client.println(".logo img{ width: 100px;}");
-client.println(".logo img { width: 100px;}.logo h1 .C {color: #0049AF;}.logo h1 .I {color: #FF9737;}.logo h1 .T {color: #FF0E0E;}");
+client.println(".logo img { width: 100px;}.logo h1 .C {color: #2e79e2;}.logo h1 .I {color: #9701FF;}.logo h1 .T {color: #FF0E0E;}");
 client.println("h1{ font-family: 'Nunito', sans-serif;}header nav {display: flex; align-items: center;}");
 client.println("header nav ul{ display: flex; gap: 15px; flex-wrap: wrap; list-style: none;}nav ul li a { display: flex; flex-shrink: 1; flex-grow: 1; box-shadow: 0px 2px 2px #dcdcdc;}");
 client.println("nav a{text-decoration: none; padding: 4px 8px; border: 2px #BFBBBB solid; border-radius: 3px; font-family: 'Nunito', sans-serif; font-weight: 700; color: #101010;}");
-client.println("main{ margin: 25px 0;}section{ margin-bottom: 15px;}section h2 {margin-bottom: 1px;font-family: 'Nunito', sans-serif;}");
+client.println("main{ margin: 25px 0;}section{ margin-bottom: 25px;}section h2 {margin-bottom: 1px;font-family: 'Nunito', sans-serif;}");
 client.println("#testar{margin-bottom: 15px} #botoes{display: grid; grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr;} #botoes div{margin-bottom: 5px;}");
 
 //botao vermelho
@@ -240,13 +240,16 @@ client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: poi
 client.println(".buttonTurquesa { background-color: #00cece; border: none; color: white; padding: 16px 40px; border-radius: 4px;");
 client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
 
+//color picker margin
+client.println("input{margin-top: 5px;}");
+
 //botao enquanto esta desligado
 client.println(".buttonOff { background-color: #77878A; border: none; color: white; padding: 16px 40px; border-radius: 4px;");
 client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
 
-client.println("@media screen and (max-width: 1220px){body{margin:0 50px; max-width: 720px; font-size: 0.9em;}}");
-client.println("@media screen and (max-width: 770px) {header{flex-direction: column; align-items: center; gap: 10px;} #botoes {display: flex; flex-direction: column; align-items: center; justify-content: center;} #botoes div {display: flex; flex-direction: column; align-items: center; justify-content: center;}}");
-client.println("@media screen and (max-width: 570px){header nav ul{ flex-direction: column; align-items: center;}}</style></head>");
+client.println("@media screen and (max-width: 1235px){body{margin:8px 50px; max-width: 720px; font-size: 0.9em;}}");
+client.println("@media screen and (max-width: 785px) {header{flex-direction: column; align-items: center; gap: 10px;} #botoes {display: flex; flex-direction: column; align-items: center; justify-content: center;} #botoes div {display: flex; flex-direction: column; align-items: center; justify-content: center;}}");
+client.println("@media screen and (max-width: 570px){header{padding: 0 0 25px 0;} header nav ul{ flex-direction: column; align-items: center;} #botoes div{margin-bottom: 15px;}}</style></head>");
 
 // Web Page Heading (cabecalho da pagina)
 client.println("<body><header><div class=\"logo\"><img src=\"https://raw.githubusercontent.com/LucasFrancoBN/CromoIT/8581d268c88dc32a13cef0227bd83f17710ca77d/Images/CromoIT.svg\"> <h1><span class=\"C\">C</span>romo<span class=\"I\">I</span><span class=\"T\">T</span></h1></div><nav><ul><li><a href=\"#proposito\">""PROPÓSITO</a></li><li><a href=\"#testar\">""VAMOS TESTAR? :D</a></li><li><a href=\"#sobre\">""SOBRE NÓS</a></li><li><a href=\"#integrantes\">""INTEGRANTES</a></li></ul></nav></header>");
