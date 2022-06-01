@@ -197,7 +197,7 @@ client.println("<title> CromoIT </title>");
 //Estilo da pagina (CSS) 
 client.println("<style>@import url('https://fonts.googleapis.com/css2?family=Lato&family=Nunito:wght@400;700&display=swap');");
 client.println(" *{margin: 0; padding: 0;}html{ scroll-behavior: smooth;}");
-client.println("body { font-family: 'Lato', sans-serif; max-width: 1235px; margin: auto; background-color: #FCFBFA; color: #2E2E28; font-size: 16px; line-height: 24px; border: 2px #aaaaaa17 solid; border-radius: 5px; padding: 15px; margin-top: 15px;}");
+client.println("body { font-family: 'Lato', sans-serif; max-width: 1235px; margin: auto; background-color: #f3f0ec; color: #2E2E28; font-size: 16px; line-height: 24px; border: 2px #aaaaaa17 solid; border-radius: 5px; padding: 15px; margin-top: 15px;}");
 client.println("header {display: flex; justify-content: space-between; padding: 5 0 25px 0; border-bottom: 2px #aaaaaa17 solid; }");
 client.println("header .logo{ display: flex; align-items: center;}");
 client.println(".logo img{ width: 100px;}");
@@ -209,47 +209,49 @@ client.println("main{ margin: 25px 0;}section{ margin-bottom: 25px;}section h2 {
 client.println("#testar{margin-bottom: 15px} #botoes{display: grid; grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr;} #botoes div{margin-bottom: 5px;}");
 
 //botao vermelho
-client.println(".buttonRed { background-color: #ff0000; border: none; color: white; padding: 16px 40px; border-radius: 4px;");
-client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
+client.println(".buttonRed {background: linear-gradient(360deg, #C60202 0%, #F74F2A 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+client.println(".buttonRed span{ background: linear-gradient(180deg, #F4F1EC 0%, #FFFFFF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
 
 //botao verde
-client.println(".buttonGreen { background-color: #008000; border: none; color: white; padding: 16px 40px; border-radius: 4px;");
-client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
+client.println(".buttonGreen {background: linear-gradient(360deg, #279227 0%, #6EC246 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+client.println(".buttonGreen span{ background: linear-gradient(360deg, #F4F1EC 0%, #FFFFFF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
 
 //botao azul
-client.println(".buttonBlue { background-color: #0055ff; border: none; color: white; padding: 16px 40px; border-radius: 4px;");
-client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
+client.println(".buttonBlue {background: linear-gradient(360deg, #0171E0 0%, #35AAFF 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+client.println(".buttonBlue span{ background: linear-gradient(360deg, #F4F1EC 0%, #FFFFFF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
 
 //botao laranja
-client.println(".buttonOrange { background-color: #ff8c00; border: none; color: white; padding: 16px 40px; border-radius: 4px;");
-client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
+client.println(".buttonOrange { background: linear-gradient(360deg,#F29900 0%, #FFCF0D 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+client.println(".buttonOrange span { background: linear-gradient(180deg, #7B5D10 0%, #402E00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
 
 //botao magenta
-client.println(".buttonMagenta { background-color: #a020f0; border: none; color: white; padding: 16px 40px; border-radius: 4px;");
-client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
+client.println(".buttonMagenta { background: linear-gradient(180deg, #C620F0 0%, #CA2DF1 0.01%, #A110D5 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+client.println(".buttonMagenta span{ background: linear-gradient(180deg, #EEEAE5 0%, #F7F5F2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
 
 //botao amarelo
-client.println(".buttonYellow { background-color: #feeb36; border: none; color: white; padding: 16px 40px; border-radius: 4px;");
-client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
+client.println(".buttonYellow { background: linear-gradient(180deg, #FFE81B 0%, #ECC602 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+client.println(".buttonYellow span{ background: linear-gradient(180deg, #978B1D 0%, #4B4400 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
 
 //botao branco
-client.println(".buttonWhite { background-color: #ffffff; border: 2px #BFBBBB solid; padding: 16px 40px; border-radius: 4px;");
-client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
+client.println(".buttonWhite { background: linear-gradient(180deg, #FFFFFF 0%, #F3EFE8 100%); border: 2px #24221f2d solid; padding: 16px 40px; border-radius: 4px; text-decoration: none; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+client.println(".buttonWhite span{ background: linear-gradient(180deg, #484746 0%, #24221F 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
 
 //botao turquesa
-client.println(".buttonTurquesa { background-color: #00cece; border: none; color: white; padding: 16px 40px; border-radius: 4px;");
-client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
+client.println(".buttonTurquesa { background: linear-gradient(180deg, #21ECEC 0%, #08A6C9 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+client.println(".buttonTurquesa span{ background: linear-gradient(180deg, #135968 0%, #01262E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
 
 //color picker margin
 client.println("input{margin-top: 5px;}");
 
 //botao enquanto esta desligado
-client.println(".buttonOff { background-color: #77878A; border: none; color: white; padding: 16px 40px; border-radius: 4px;");
-client.println("text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc}");
+client.println(".buttonOff {background: linear-gradient(360deg, #77878A 0%, #9AA7AA 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+client.println(".buttonOff span{ background: linear-gradient(360deg, #F4F1EC 0%, #FFFFFF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
 
 client.println("@media screen and (max-width: 1235px){body{margin:8px 50px; max-width: 720px; font-size: 0.9em;}}");
 client.println("@media screen and (max-width: 785px) {header{flex-direction: column; align-items: center; gap: 10px;} #botoes {display: flex; flex-direction: column; align-items: center; justify-content: center;} #botoes div {display: flex; flex-direction: column; align-items: center; justify-content: center;}}");
 client.println("@media screen and (max-width: 570px){header{padding: 0 0 25px 0;} header nav ul{ flex-direction: column; align-items: center;} #botoes div{margin-bottom: 15px;}}</style></head>");
+
+
 
 // Web Page Heading (cabecalho da pagina)
 client.println("<body><header><div class=\"logo\"><img src=\"https://raw.githubusercontent.com/LucasFrancoBN/CromoIT/8581d268c88dc32a13cef0227bd83f17710ca77d/Images/CromoIT.svg\"> <h1><span class=\"C\">C</span>romo<span class=\"I\">I</span><span class=\"T\">T</span></h1></div><nav><ul><li><a href=\"#proposito\">""PROPÓSITO</a></li><li><a href=\"#testar\">""VAMOS TESTAR? :D</a></li><li><a href=\"#sobre\">""SOBRE NÓS</a></li><li><a href=\"#integrantes\">""INTEGRANTES</a></li></ul></nav></header>");
@@ -262,77 +264,77 @@ client.println("<h2 id=\"testar\">""Vamos testar? :D</h2><section id=\"botoes\">
 client.println("<div><p>O Led vermelho está " + vermelho_estado + "</p>");
 //Se o vermelho_estado está off, exibe o botao off 
 if (vermelho_estado=="off") {
-client.println("<p><a href=\"/2/on\"><button class=\"button buttonOff\">OFF</button></a></p></div>");
+client.println("<p><a href=\"/2/on\"><button class=\"button buttonOff\"> <span> OFF </span> </button></a></p></div>");
 } else {
-client.println("<p><a href=\"/2/off\"><button class=\"button buttonRed\">ON</button></a></p></div>");
+client.println("<p><a href=\"/2/off\"><button class=\"button buttonRed\"> <span> ON </span> </button></a></p></div>");
 } 
 
 //Exibe o estado atual dos botoes (liga/desliga) o botao verde
 client.println("<div><p>O Led verde está " + verde_estado + "</p>");
 //Se o verde_estado está off, exibe o botao off 
 if (verde_estado =="off") {
-client.println("<p><a href=\"/4/on\"><button class=\"button buttonOff\">OFF</button></a></p></div>");
+client.println("<p><a href=\"/4/on\"><button class=\"button buttonOff\"> <span> OFF </span> </button></a></p></div>");
 } else {
-client.println("<p><a href=\"/4/off\"><button class=\"button buttonGreen\">ON</button></a></p></div>");
+client.println("<p><a href=\"/4/off\"><button class=\"button buttonGreen\"> <span> ON </span> </button></a></p></div>");
 }
 
 //Exibe o estado atual dos botoes (liga/desliga) o botao azul
 client.println("<div><p>O Led azul está " + azul_estado + "</p>");
 //Se o azul_estado está off, exibe o botao off
 if (azul_estado =="off") {
-client.println("<p><a href=\"/5/on\"><button class=\"button buttonOff\">OFF</button></a></p></div>");
+client.println("<p><a href=\"/5/on\"><button class=\"button buttonOff\"> <span> OFF </span> </button></a></p></div>");
 } else {
-client.println("<p><a href=\"/5/off\"><button class=\"button buttonBlue\">ON</button></a></p></div>");
+client.println("<p><a href=\"/5/off\"><button class=\"button buttonBlue\"> <span> ON </span> </button></a></p></div>");
 }
 
 //Exibe o estado atual dos botoes (liga/desliga) o botao laranja
 client.println("<div><p>O Led laranja está " + laranja_estado + "</p>");
 //Se o laranja_estado está off, exibe o botao off 
 if (laranja_estado =="off") {
-client.println("<p><a href=\"/6/on\"><button class=\"button buttonOff\">OFF</button></a></p></div>");
+client.println("<p><a href=\"/6/on\"><button class=\"button buttonOff\"> <span> OFF </span> </button></a></p></div>");
 } else {
-client.println("<p><a href=\"/6/off\"><button class=\"button buttonOrange\">ON</button></a></p></div>");
+client.println("<p><a href=\"/6/off\"><button class=\"button buttonOrange\"> <span> ON </span> </button></a></p></div>");
 }
 
 //Exibe o estado atual dos botoes (liga/desliga) o botao magenta
 client.println("<div><p>O Led Magenta está " + magenta_estado + "</p>");
 //Se o magenta_estado está off, exibe o botao off  
 if (magenta_estado =="off") {
-client.println("<p><a href=\"/7/on\"><button class=\"button buttonOff\">OFF</button></a></p></div>");
+client.println("<p><a href=\"/7/on\"><button class=\"button buttonOff\"> <span> OFF </span> </button></a></p></div>");
 } else {
-client.println("<p><a href=\"/7/off\"><button class=\"button buttonMagenta\">ON</button></a></p></div>");
+client.println("<p><a href=\"/7/off\"><button class=\"button buttonMagenta\"> <span> ON </span> </button></a></p></div>");
 }
 
 //Exibe o estado atual dos botoes (liga/desliga) o botao amarelo
 client.println("<div><p>O Led Amarelo está " + amarelo_estado + "</p>");
 //Se o amarelo_estado está off, exibe o botao off 
 if (amarelo_estado =="off") {
-client.println("<p><a href=\"/8/on\"><button class=\"button buttonOff\">OFF</button></a></p></div>");
+client.println("<p><a href=\"/8/on\"><button class=\"button buttonOff\"> <span> OFF </span> </button></a></p></div>");
 } else {
-client.println("<p><a href=\"/8/off\"><button class=\"button buttonYellow\">ON</button></a></p></div>");
+client.println("<p><a href=\"/8/off\"><button class=\"button buttonYellow\"> <span> ON </span> </button></a></p></div>");
 }
 
 //Exibe o estado atual dos botoes (liga/desliga) o botao branco
 client.println("<div><p>O Led Branco está " + branco_estado + "</p>");
 //Se o branco_estado está off, exibe o botao off 
 if (branco_estado =="off") {
-client.println("<p><a href=\"/9/on\"><button class=\"button buttonOff\">OFF</button></a></p></div>");
+client.println("<p><a href=\"/9/on\"><button class=\"button buttonOff\"> <span> OFF </span> </button></a></p></div>");
 } else {
-client.println("<p><a href=\"/9/off\"><button class=\"button buttonWhite\">ON</button></a></p></div>");
+client.println("<p><a href=\"/9/off\"><button class=\"button buttonWhite\"> <span> ON </span> </button></a></p></div>");
 }
 
 //Exibe o estado atual dos botoes (liga/desliga) o botao turquesa
 client.println("<div><p>O Led Turquesa está " + turquesa_estado + "</p>");
 //Se o turquesa_estado está off, exibe o botao off 
 if (turquesa_estado =="off") {
-client.println("<p><a href=\"/1/on\"><button class=\"button buttonOff\">OFF</button></a></p></div>");
+client.println("<p><a href=\"/1/on\"><button class=\"button buttonOff\"> <span> OFF </span> </button></a></p></div>");
 } else {
-client.println("<p><a href=\"/1/off\"><button class=\"button buttonTurquesa\">ON</button></a></p></div>");
+client.println("<p><a href=\"/1/off\"><button class=\"button buttonTurquesa\"> <span> ON </span> </button></a></p></div>");
 }
 
 //COLOR PICKER
 client.println("<div><p>Esolha a cor que você deseja :D</p>");
-client.println("<a href=\"ColorPick\" id=\"change_color\"><button class=\"button buttonOff\">Change Color</button></a> ");
+client.println("<a href=\"ColorPick\" id=\"change_color\"><button class=\"button buttonOff\"> <span> Change Color </span> </button></a> ");
 
 //Input com o id "rgb" da classe "jscolor"
 client.println("<input class=\"jscolor {onFineChange:'update(this)'}\" id=\"rgb\">");
@@ -382,7 +384,7 @@ if(header.indexOf("GET /1/ColorPick?r") >= 0 ||
 
 //APAGA TODAS AS CORES
 client.println("<div><p> Apague o Led aqui </p>");
-client.println("<p><a href=\"/3/off\"><button class=\"button buttonOff\">OFF</button></a></p></div>");
+client.println("<p><a href=\"/3/off\"><button class=\"button buttonOff\"> <span> OFF </span> </button></a></p></div>");
 if(header.indexOf("GET /3/off") >=0){
   RGB_cor(0, 0, 0);
   estadoOff ();
