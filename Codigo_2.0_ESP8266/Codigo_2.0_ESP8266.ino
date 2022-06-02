@@ -210,15 +210,15 @@ client.println("#testar{margin-bottom: 15px} #botoes{display: grid; grid-templat
 
 //botao vermelho
 client.println(".buttonRed {background: linear-gradient(360deg, #C60202 0%, #F74F2A 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
-client.println(".buttonRed span{ background: linear-gradient(180deg, #F4F1EC 0%, #FFFFFF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+client.println(".buttonRed span{ background: linear-gradient(180deg,  #7D1818 0%, #610909 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
 
 //botao verde
-client.println(".buttonGreen {background: linear-gradient(360deg, #279227 0%, #6EC246 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
-client.println(".buttonGreen span{ background: linear-gradient(360deg, #F4F1EC 0%, #FFFFFF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+client.println(".buttonGreen { background: linear-gradient(360deg, #279227 0%, #6EC246 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+client.println(".buttonGreen span{ background: linear-gradient(360deg, #074607 0%, #3E7922 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
 
 //botao azul
-client.println(".buttonBlue {background: linear-gradient(360deg, #0171E0 0%, #35AAFF 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
-client.println(".buttonBlue span{ background: linear-gradient(360deg, #F4F1EC 0%, #FFFFFF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+client.println(".buttonBlue { background: linear-gradient(360deg, #0171E0 0%, #35AAFF 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+client.println(".buttonBlue span{ background: linear-gradient(360deg, #032140 0%, #2C6691 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
 
 //botao laranja
 client.println(".buttonOrange { background: linear-gradient(360deg,#F29900 0%, #FFCF0D 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
@@ -226,7 +226,7 @@ client.println(".buttonOrange span { background: linear-gradient(180deg, #7B5D10
 
 //botao magenta
 client.println(".buttonMagenta { background: linear-gradient(180deg, #C620F0 0%, #CA2DF1 0.01%, #A110D5 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
-client.println(".buttonMagenta span{ background: linear-gradient(180deg, #EEEAE5 0%, #F7F5F2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+client.println(".buttonMagenta span{ background: linear-gradient(180deg,#6A177E 0%, #37004A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
 
 //botao amarelo
 client.println(".buttonYellow { background: linear-gradient(180deg, #FFE81B 0%, #ECC602 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; margin: 2px; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
