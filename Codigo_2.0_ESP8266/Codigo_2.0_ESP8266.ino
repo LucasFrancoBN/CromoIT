@@ -20,6 +20,12 @@ String amarelo_estado = "off";
 String branco_estado = "off";
 String turquesa_estado = "off";
 
+//Estado para a pagina
+String brancoP = "off";
+String control = "on";
+
+
+
 //Estado para o color Picker
 String vermelhoCP = "0";
 String verdeCP = "0";
@@ -197,56 +203,120 @@ client.println("<title> CromoIT </title>");
 //Estilo da pagina (CSS) 
 client.println("<style>@import url('https://fonts.googleapis.com/css2?family=Lato&family=Nunito:wght@400;700&display=swap');");
 client.println(" *{margin: 0; padding: 0;}html{ scroll-behavior: smooth;}");
-client.println("body { font-family: 'Lato', sans-serif; max-width: 1235px; margin: auto; background-color: #f3f0ec; color: #2E2E28; font-size: 16px; line-height: 24px; border: 2px #aaaaaa17 solid; border-radius: 5px; padding: 15px; margin-top: 15px;}");
-client.println("header {display: flex; justify-content: space-between; padding: 5 0 25px 0; border-bottom: 2px #aaaaaa17 solid; }");
+
+if(brancoP == "off"){
+  client.println("body { font-family: 'Lato', sans-serif; max-width: 1235px; margin: auto; background-color: #0B0C12; color: #F5F7FA; font-size: 16px; line-height: 24px; border: 2px #474D5917 solid; border-radius: 5px; padding: 15px; margin-top: 15px;}");
+  client.println("header {display: flex; justify-content: space-between; padding: 5 0 25px 0; border-bottom: 2px #474D5917 solid; }");
+} else if (brancoP == "on"){
+  client.println("body { font-family: 'Lato', sans-serif; max-width: 1235px; margin: auto; background-color: #F5F7FA; color: #0B0C12; font-size: 16px; line-height: 24px; border: 2px #CED3D950 solid; border-radius: 5px; padding: 15px; margin-top: 15px;}");
+  client.println("header {display: flex; justify-content: space-between; padding: 5 0 25px 0; border-bottom: 2px #CED3D950 solid; }");
+}
+
 client.println("header .logo{ display: flex; align-items: center;}");
 client.println(".logo img{ width: 100px;}");
 client.println(".logo img { width: 100px;}.logo h1 .C {color: #2e79e2;}.logo h1 .I {color: #9701FF;}.logo h1 .T {color: #FF0E0E;}");
 client.println("h1{ font-family: 'Nunito', sans-serif;}header nav {display: flex; align-items: center;}");
-client.println("header nav ul{ display: flex; gap: 15px; flex-wrap: wrap; list-style: none;}nav ul li a { display: flex; flex-shrink: 1; flex-grow: 1; box-shadow: 0px 2px 2px #dcdcdc;}");
-client.println("nav a{text-decoration: none; padding: 4px 8px; border: 2px #BFBBBB solid; border-radius: 3px; font-family: 'Nunito', sans-serif; font-weight: 700; color: #101010;}");
+client.println("header nav ul{ display: flex; gap: 15px; flex-wrap: wrap; list-style: none;}nav ul li { display: flex; flex-shrink: 1; flex-grow: 1; align-items: center;}");
+
+if(brancoP == "off"){
+  client.println("#lua { display: none;} li i{ cursor: pointer; font-size: 1.25em;}");
+  client.println("nav a{text-decoration: none; padding: 4px 8px; border: 2px #474D59 solid; box-shadow: 0px 2px 2px #242833; border-radius: 3px; font-family: 'Nunito', sans-serif; font-weight: 700; color: #F5F7FA;}");
+} else if (brancoP == "on"){
+  client.println("#lua { display: flex;} #sol{display: none;} li i{ cursor: pointer; font-size: 1.25em;}");
+  client.println("nav a{text-decoration: none; padding: 4px 8px; border: 2px #CED3D9 solid; box-shadow: 0px 2px 2px #C0C5CC; border-radius: 3px; font-family: 'Nunito', sans-serif; font-weight: 700; color: #0B0C12;}");
+}
+
 client.println("main{ margin: 25px 0;}section{ margin-bottom: 25px;}section h2 {margin-bottom: 1px;font-family: 'Nunito', sans-serif;}");
+
+if(brancoP == "off"){
+  client.println("p { color: #989EA6;}");
+} else if (brancoP == "on"){
+  client.println("p { color: #474D59;}");
+}
+
 client.println("#testar{margin-bottom: 15px} #botoes{display: grid; grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr;} #botoes div{margin-bottom: 5px;}");
-client.println(".video div { margin-bottom: 10px;} .video input { display: block; margin: 5px 0; padding: 5px;}");
+client.println(".video div { margin-bottom: 10px;} .video input { display: block; margin: 5px 0; padding: 5px;} .musica div {margin-bottom: 10px;}");
 
-//botao vermelho
-client.println(".buttonRed {background: linear-gradient(360deg, #C60202 0%, #F74F2A 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
-client.println(".buttonRed span{ background: linear-gradient(180deg,  #7D1818 0%, #610909 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+  if(brancoP == "off"){
+  //botao vermelho
+  client.println(".buttonRed {background: linear-gradient(360deg, #C60202 0%, #F74F2A 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #242833; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+  client.println(".buttonRed span{ background: linear-gradient(180deg,  #7D1818 0%, #610909 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+  
+  //botao verde
+  client.println(".buttonGreen { background: linear-gradient(360deg, #279227 0%, #6EC246 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #242833; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+  client.println(".buttonGreen span{ background: linear-gradient(360deg, #074607 0%, #3E7922 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+  
+  //botao azul
+  client.println(".buttonBlue { background: linear-gradient(360deg, #0171E0 0%, #35AAFF 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none;  cursor: pointer; box-shadow: 0px 2px 2px #242833; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+  client.println(".buttonBlue span{ background: linear-gradient(360deg, #032140 0%, #2C6691 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+  
+  //botao laranja
+  client.println(".buttonOrange { background: linear-gradient(360deg,#F29900 0%, #FFCF0D 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #242833; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+  client.println(".buttonOrange span { background: linear-gradient(180deg, #7B5D10 0%, #402E00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+  
+  //botao magenta
+  client.println(".buttonMagenta { background: linear-gradient(180deg, #C620F0 0%, #CA2DF1 0.01%, #A110D5 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none;  cursor: pointer; box-shadow: 0px 2px 2px #242833; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+  client.println(".buttonMagenta span{ background: linear-gradient(180deg,#6A177E 0%, #37004A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+  
+  //botao amarelo
+  client.println(".buttonYellow { background: linear-gradient(180deg, #FFE81B 0%, #ECC602 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #242833; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+  client.println(".buttonYellow span{ background: linear-gradient(180deg, #978B1D 0%, #4B4400 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+  
+  //botao branco
+  client.println(".buttonWhite { background: linear-gradient(180deg, #FFFFFF 0%, #F3EFE8 100%); padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #242833; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+  client.println(".buttonWhite span{ background: linear-gradient(180deg, #484746 0%, #24221F 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+  
+  //botao turquesa
+  client.println(".buttonTurquesa { background: linear-gradient(180deg, #21ECEC 0%, #08A6C9 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #242833; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+  client.println(".buttonTurquesa span{ background: linear-gradient(180deg, #135968 0%, #01262E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
 
-//botao verde
-client.println(".buttonGreen { background: linear-gradient(360deg, #279227 0%, #6EC246 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
-client.println(".buttonGreen span{ background: linear-gradient(360deg, #074607 0%, #3E7922 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+  //botao enquanto esta desligado
+  client.println(".buttonOff {background: linear-gradient(360deg, #77878A 0%, #9AA7AA 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #242833; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+  client.println(".buttonOff span{ background: linear-gradient(360deg, #F4F1EC 0%, #FFFFFF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+} 
 
-//botao azul
-client.println(".buttonBlue { background: linear-gradient(360deg, #0171E0 0%, #35AAFF 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none;  cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
-client.println(".buttonBlue span{ background: linear-gradient(360deg, #032140 0%, #2C6691 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
 
-//botao laranja
-client.println(".buttonOrange { background: linear-gradient(360deg,#F29900 0%, #FFCF0D 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
-client.println(".buttonOrange span { background: linear-gradient(180deg, #7B5D10 0%, #402E00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+else if (brancoP == "on"){
+  //botao vermelho
+  client.println(".buttonRed {background: linear-gradient(360deg, #C60202 0%, #F74F2A 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #C0C5CC; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+  client.println(".buttonRed span{ background: linear-gradient(180deg,  #7D1818 0%, #610909 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+  
+  //botao verde
+  client.println(".buttonGreen { background: linear-gradient(360deg, #279227 0%, #6EC246 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #C0C5CC; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+  client.println(".buttonGreen span{ background: linear-gradient(360deg, #074607 0%, #3E7922 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+  
+  //botao azul
+  client.println(".buttonBlue { background: linear-gradient(360deg, #0171E0 0%, #35AAFF 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none;  cursor: pointer; box-shadow: 0px 2px 2px #C0C5CC; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+  client.println(".buttonBlue span{ background: linear-gradient(360deg, #032140 0%, #2C6691 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+  
+  //botao laranja
+  client.println(".buttonOrange { background: linear-gradient(360deg,#F29900 0%, #FFCF0D 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #C0C5CC; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+  client.println(".buttonOrange span { background: linear-gradient(180deg, #7B5D10 0%, #402E00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+  
+  //botao magenta
+  client.println(".buttonMagenta { background: linear-gradient(180deg, #C620F0 0%, #CA2DF1 0.01%, #A110D5 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none;  cursor: pointer; box-shadow: 0px 2px 2px #C0C5CC; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+  client.println(".buttonMagenta span{ background: linear-gradient(180deg,#6A177E 0%, #37004A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+  
+  //botao amarelo
+  client.println(".buttonYellow { background: linear-gradient(180deg, #FFE81B 0%, #ECC602 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #C0C5CC; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+  client.println(".buttonYellow span{ background: linear-gradient(180deg, #978B1D 0%, #4B4400 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+  
+  //botao branco
+  client.println(".buttonWhite { background: linear-gradient(180deg, #FFFFFF 0%, #F3EFE8 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #C0C5CC; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+  client.println(".buttonWhite span{ background: linear-gradient(180deg, #484746 0%, #24221F 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+  
+  //botao turquesa
+  client.println(".buttonTurquesa { background: linear-gradient(180deg, #21ECEC 0%, #08A6C9 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #C0C5CC; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+  client.println(".buttonTurquesa span{ background: linear-gradient(180deg, #135968 0%, #01262E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
 
-//botao magenta
-client.println(".buttonMagenta { background: linear-gradient(180deg, #C620F0 0%, #CA2DF1 0.01%, #A110D5 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none;  cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
-client.println(".buttonMagenta span{ background: linear-gradient(180deg,#6A177E 0%, #37004A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+  //botao enquanto esta desligado
+  client.println(".buttonOff {background: linear-gradient(360deg, #77878A 0%, #9AA7AA 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #C0C5CC; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
+  client.println(".buttonOff span{ background: linear-gradient(360deg, #F4F1EC 0%, #FFFFFF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
+}
 
-//botao amarelo
-client.println(".buttonYellow { background: linear-gradient(180deg, #FFE81B 0%, #ECC602 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
-client.println(".buttonYellow span{ background: linear-gradient(180deg, #978B1D 0%, #4B4400 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
-
-//botao branco
-client.println(".buttonWhite { background: linear-gradient(180deg, #FFFFFF 0%, #F3EFE8 100%); border: 2px #24221f2d solid; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
-client.println(".buttonWhite span{ background: linear-gradient(180deg, #484746 0%, #24221F 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
-
-//botao turquesa
-client.println(".buttonTurquesa { background: linear-gradient(180deg, #21ECEC 0%, #08A6C9 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
-client.println(".buttonTurquesa span{ background: linear-gradient(180deg, #135968 0%, #01262E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
 
 //color picker input
 client.println("input{margin-top: 5px; padding: 5px;}");
-
-//botao enquanto esta desligado
-client.println(".buttonOff {background: linear-gradient(360deg, #77878A 0%, #9AA7AA 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #dcdcdc; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
-client.println(".buttonOff span{ background: linear-gradient(360deg, #F4F1EC 0%, #FFFFFF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
 
 client.println("@media screen and (max-width: 1235px){body{margin:8px 50px; max-width: 720px; font-size: 0.9em;}}");
 client.println("@media screen and (max-width: 785px) {header{flex-direction: column; align-items: center; gap: 10px;} #botoes {display: flex; flex-direction: column; align-items: center; justify-content: center;} #botoes div {display: flex; flex-direction: column; align-items: center; justify-content: center;}}");
@@ -255,12 +325,32 @@ client.println("@media screen and (max-width: 570px){header{padding: 0 0 25px 0;
 
 
 // Web Page Heading (cabecalho da pagina)
-client.println("<body><header><div class=\"logo\"><img src=\"https://raw.githubusercontent.com/LucasFrancoBN/CromoIT/8581d268c88dc32a13cef0227bd83f17710ca77d/Images/CromoIT.svg\"> <h1><span class=\"C\">C</span>romo<span class=\"I\">I</span><span class=\"T\">T</span></h1></div><nav><ul><li><a href=\"#proposito\">""PROPÓSITO</a></li><li><a href=\"#testar\">""VAMOS TESTAR? :D</a></li><li><a href=\"#video\">VÍDEO</a></li><li><a href=\"#sobre\">""SOBRE NÓS</a></li><li><a href=\"#integrantes\">""INTEGRANTES</a></li></ul></nav></header>");
+client.println("<body><header><div class=\"logo\"><img src=\"https://raw.githubusercontent.com/LucasFrancoBN/CromoIT/8581d268c88dc32a13cef0227bd83f17710ca77d/Images/CromoIT.svg\"> <h1><span class=\"C\">C</span>romo<span class=\"I\">I</span><span class=\"T\">T</span></h1></div>"); 
+
+//nav bar
+  //sol e lua button
+client.println("<nav><ul> <li id=\"sol\"> <a href=\"/b/\" style=\"border: none; box-shadow:none;\"> <i class=\"fa-solid fa-sun\"> </i> </a> </li>");
+if(header.indexOf("GET /b/") >= 0 && control == "on"){
+  brancoP = "on";
+  control = "off";
+  client.println("<script> function refresh(refreshPeriod) { setTimeout(\"location.reload(true);\", refreshPeriod); } window.onload = refresh(100); </script>");
+}
+client.println("<li id=\"lua\"> <a href=\"/p/\" style=\"border: none; box-shadow:none;\"> <i class=\"fa-solid fa-moon\"> </i> </a> </li>");
+if(header.indexOf("GET /p/")>= 0 && control == "off"){
+  brancoP = "off";
+  control = "on";
+  client.println("<script> function refresh(refreshPeriod) { setTimeout(\"location.reload(true);\", refreshPeriod); } window.onload = refresh(100); </script>");
+}
+
+client.println(" <li><a href=\"#proposito\">""PROPÓSITO</a></li><li><a href=\"#testar\">""VAMOS TESTAR? :D</a></li> <li><a href=\"#musica\">MÚSICA</a></li> <li><a href=\"#video\">VÍDEO</a></li></ul></nav></header>");
+
+
 
 //MAIN (conteudo principal)
 client.println("<main><section><h2 id=\"proposito\">"" Nosso Propósito</h2><p>Este projeto propõe soluções para melhoria da qualidade do sono. Tendo em vista que, nos dias atuais, temos cada vez mais dificuldade em ter uma boa noite de sono, o que pode alterar nosso humor e prejudicar nossa produtividade. Apresentamos o CromoIT, ferramenta que vai deixar seu ambiente aconchegante e prepará-lo para a rotina noturna.</p></section>");
 
 client.println("<h2 id=\"testar\">""Vamos testar? :D</h2><section id=\"botoes\">"); 
+
 //Exibe o estado atual dos botoes (liga/desliga) o botao vermelho
 client.println("<div><p>O Led vermelho está " + vermelho_estado + "</p>");
 //Se o vermelho_estado está off, exibe o botao off 
@@ -389,13 +479,20 @@ client.println("<p><a href=\"/3/off\"><button class=\"button buttonOff\"> <span>
 if(header.indexOf("GET /3/off") >=0){
   RGB_cor(0, 0, 0);
   estadoOff ();
-}
-client.println("</section>");
+} client.println("</section>");
 
-//MUSICA 
-client.println("<section class=\"video\"> <div><h2 id=\"video\">Vídeo</h2><p>Caso não tenha gostado da nossa playlist, coloque o link do youtube da música que você preferir aqui embaixo :D</p></div> ");
-client.println("<iframe id=\"iframe\" width=\"420\" height=\"315\"src=\"https://www.youtube.com/embed/DWyG4wqU0Tw\"></iframe>");
-client.println("<input type=\"url\" name=\"url\" id=\"urlInput\">");
+
+//MUSICA
+client.println("<section class=\"musica\"> <div> <h2 id=\"musica\">Música</h2> <p>Nós recomendamos que você faça a cromoterapia em conjunto com uma playlist de música bem calma e leve, por isso separamos uma playlist para você :D</p> </div>");    
+client.println("<iframe title=\"deezer-widget\" src=\"https://widget.deezer.com/widget/dark/playlist/8748341082\" width=\"100%\" height=\"300\" frameborder=\"0\" allowtransparency=\"true\" allow=\"encrypted-media; clipboard-write\"></iframe>");     
+client.println("<iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/playlist/35xI4hSJ8MdO1xkXwsd56a?utm_source=oembed\" width=\"100%\" height=\"380\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"></iframe> </section>");      
+
+
+
+//video 
+client.println("<section class=\"video\"> <div><h2 id=\"video\">Vídeo</h2><p>Já deixamos uma recomendação de música que você pode ouvir durante a cromoterapia como forma de complementá-la, mas você pode alterar o vídeo apenas copiando e colando o link do vídeo do youtube que você quiser</p></div> ");
+client.println("<iframe id=\"iframe\" width=\"420\" height=\"315\"src=\"https://www.youtube.com/embed/9u8USeMyIwo\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>");
+client.println("<input type=\"url\" name=\"url\" id=\"urlInput\" placeholder=\"Cole o link aqui :D\">");
 client.println("<p><button id=\"btt\" class=\"buttonOff\"> <span> Colocar video </span> </button></p></section>");
 client.println("<script> let urlInput=document.querySelector(\"#urlInput\"); let iframe = document.querySelector(\"#iframe\"); let button = document.querySelector(\"#btt\");");
 client.println("function mudarVideo () {let id = urlInput.value; if (id[29] ==\"?\"){ id = urlInput.value.split(\"?v=\")[1]; } else { id = urlInput.value.split(\".be/\")[1];} let embedlink =\"https://www.youtube.com/embed/\" + id; iframe.src = embedlink;}");
@@ -405,10 +502,14 @@ client.println("btt.addEventListener(\"click\", mudarVideo); </script>");
 client.println("<section><h2 id=\"sobre\">""Sobre nós</h2><p>Somos estudantes de Análise e Desenvolvimento de Sistemas do Centro Universitário FECAP. No total, somos 5 integrantes que juntaram as ideias e realizaram este projeto para a disciplina de Projeto Interdisciplinar, e o resultado é esse que vocês estão vendo :D</p></section>");
 
 //INTEGRANTES
-client.println("<section><h2 id=\"integrantes\">""Integrantes</h2><p>Lucas Franco - 22023179</p><p>Glauber Vinicius - 22023260</p><p> Esdras Mendes - 22023038</p><p>Beatriz Candido - 22023095</p><p>Julya Joplin - 22023461</p></section>");
+client.println("<section><h2 id=\"integrantes\">""Integrantes</h2><p>Lucas Franco - 22023179</p><p>Glauber Vinicius - 22023260</p><p> Esdras Mendes - 22023038</p><p>Beatriz Candido - 22023095</p><p>Julya Joplin - 22023461</p></section> </main>");
+
+
+//ICONE FONTAWENSOME
+client.println("<script src=\"https://kit.fontawesome.com/afc74ddb30.js\" crossorigin=\"anonymous\"></script>");
 
 //FIM DO HTML
-client.println("</main></body></html>");
+client.println("</body></html>");
 
 //A resposta HTTP termina com outra linha em branco
 client.println();
