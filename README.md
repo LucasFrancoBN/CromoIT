@@ -17,6 +17,7 @@
     <h2> 📸 Fotos </h2>
         <img src="./Images/PC.jpeg">
         <br><br>
+        <img src="./Images/PcBranco.jpeg">
        
  <h2> 📱 Responsivo </h2>
         <img src="./Images/Responsivo.jpeg" height="800px">
