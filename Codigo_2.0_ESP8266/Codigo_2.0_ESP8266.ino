@@ -492,7 +492,7 @@ client.println("<iframe style=\"border-radius:12px\" src=\"https://open.spotify.
 //video 
 client.println("<section class=\"video\"> <div><h2 id=\"video\">Vídeo</h2><p>Já deixamos uma recomendação de música que você pode ouvir durante a cromoterapia como forma de complementá-la, mas você pode alterar o vídeo apenas copiando e colando o link do vídeo do youtube que você quiser</p></div> ");
 client.println("<iframe id=\"iframe\" width=\"420\" height=\"315\"src=\"https://www.youtube.com/embed/9u8USeMyIwo\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>");
-client.println("<input type=\"url\" name=\"url\" id=\"urlInput\" placeholder=\"Cole o link aqui :D\">");
+client.println("<input style=\"margin: 15px 0;\" type=\"url\" name=\"url\" id=\"urlInput\" placeholder=\"Cole o link aqui :D\">");
 client.println("<p><button id=\"btt\" class=\"buttonOff\"> <span> Colocar video </span> </button></p></section>");
 client.println("<script> let urlInput=document.querySelector(\"#urlInput\"); let iframe = document.querySelector(\"#iframe\"); let button = document.querySelector(\"#btt\");");
 client.println("function mudarVideo () {let id = urlInput.value; if (id[29] ==\"?\"){ id = urlInput.value.split(\"?v=\")[1]; } else { id = urlInput.value.split(\".be/\")[1];} let embedlink =\"https://www.youtube.com/embed/\" + id; iframe.src = embedlink;}");
