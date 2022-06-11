@@ -22,6 +22,7 @@
  <h2> 📱 Responsivo </h2>
         <img src="./Images/Responsivo.jpeg" height="800px">
         <br><br>
+        <img src="./Images/Responsivo1.jpeg" height="800px">
         
    <h2 id="GIFs"> 🎥 GIFs </h2>
         
