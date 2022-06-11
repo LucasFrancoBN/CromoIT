@@ -223,7 +223,7 @@ if(brancoP == "off"){
   client.println("nav a{text-decoration: none; padding: 4px 8px; border: 2px #474D59 solid; box-shadow: 0px 2px 2px #242833; border-radius: 3px; font-family: 'Nunito', sans-serif; font-weight: 700; color: #F5F7FA;}");
 } else if (brancoP == "on"){
   client.println("#lua { display: flex;} #sol{display: none;} li i{ cursor: pointer; font-size: 1.25em;}");
-  client.println("nav a{text-decoration: none; padding: 4px 8px; border: 2px #CED3D9 solid; box-shadow: 0px 2px 2px #C0C5CC; border-radius: 3px; font-family: 'Nunito', sans-serif; font-weight: 700; color: #0B0C12;}");
+  client.println("nav a{text-decoration: none; padding: 4px 8px; border: 2px #ced3d988 solid; box-shadow: 0px 2px 2px #C0C5CC; border-radius: 3px; font-family: 'Nunito', sans-serif; font-weight: 700; color: #0B0C12;}");
 }
 
 client.println("main{ margin: 25px 0;}section{ margin-bottom: 25px;}section h2 {margin-bottom: 1px;font-family: 'Nunito', sans-serif;}");
