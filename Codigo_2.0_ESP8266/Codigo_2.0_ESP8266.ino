@@ -25,6 +25,10 @@ String brancoP = "off";
 String control = "on";
 
 
+//Controle apaga leds
+String controlOff = "off";
+
+
 
 //Estado para o color Picker
 String vermelhoCP = "0";
@@ -50,20 +54,38 @@ unsigned long previousTime = 0;
 //Define o tempo limite em milisegundos 
 const long timeoutTime = 2000;
 
+
+//IP ESTATICO
+IPAddress local_IP (192,168,0,125);
+IPAddress gateway(192,168,0,1);
+IPAddress subnet(255,255,255,0);
+IPAddress primaryDNS(8,8,8,8);
+IPAddress secondaryDNS(8,8,4,4);
+
 void setup() {
 Serial.begin(115200);
+
 //Inicializa as variaveis da saida dos leds
 pinMode(vermelhoLED, OUTPUT);
 pinMode(verdeLED, OUTPUT);
 pinMode(azulLED,OUTPUT);
+
+
 // Set outputs to LOW
 digitalWrite(vermelhoLED, 0);
 digitalWrite(verdeLED, 0);
 digitalWrite(azulLED, 0);
 
+
 // Conecta na rede wifi com usuario e senha
 Serial.print("Connecting to ");
 Serial.println(ssid);
+
+if(!WiFi.config(local_IP, gateway, subnet, primaryDNS, secondaryDNS))
+{
+  Serial.println("STA Failed to configure");
+}
+
 WiFi.begin(ssid, password);
 while (WiFi.status() != WL_CONNECTED) {
 delay(500);
@@ -204,10 +226,12 @@ client.println("<title> CromoIT </title>");
 client.println("<style>@import url('https://fonts.googleapis.com/css2?family=Lato&family=Nunito:wght@400;700&display=swap');");
 client.println(" *{margin: 0; padding: 0;}html{ scroll-behavior: smooth;}");
 
-if(brancoP == "off"){
+if(brancoP == "off"){ //Se a variavel brancoP estiver off, então:
   client.println("body { font-family: 'Lato', sans-serif; max-width: 1235px; margin: auto; background-color: #0B0C12; color: #F5F7FA; font-size: 16px; line-height: 24px; border: 2px #474D5917 solid; border-radius: 5px; padding: 15px; margin-top: 15px;}");
   client.println("header {display: flex; justify-content: space-between; padding: 5 0 25px 0; border-bottom: 2px #474D5917 solid; }");
-} else if (brancoP == "on"){
+} 
+
+else if (brancoP == "on"){ //Se a variavel brancoP estiver on, então:
   client.println("body { font-family: 'Lato', sans-serif; max-width: 1235px; margin: auto; background-color: #F5F7FA; color: #0B0C12; font-size: 16px; line-height: 24px; border: 2px #CED3D950 solid; border-radius: 5px; padding: 15px; margin-top: 15px;}");
   client.println("header {display: flex; justify-content: space-between; padding: 5 0 25px 0; border-bottom: 2px #CED3D950 solid; }");
 }
@@ -218,26 +242,30 @@ client.println(".logo img { width: 100px;}.logo h1 .C {color: #2e79e2;}.logo h1 
 client.println("h1{ font-family: 'Nunito', sans-serif;}header nav {display: flex; align-items: center;}");
 client.println("header nav ul{ display: flex; gap: 15px; flex-wrap: wrap; list-style: none;}nav ul li { display: flex; flex-shrink: 1; flex-grow: 1; align-items: center;}");
 
-if(brancoP == "off"){
+if(brancoP == "off"){ //Se a variavel brancoP estiver off, então:
   client.println("#lua { display: none;} li i{ cursor: pointer; font-size: 1.25em;}");
   client.println("nav a{text-decoration: none; padding: 4px 8px; border: 2px #474D59 solid; box-shadow: 0px 2px 2px #242833; border-radius: 3px; font-family: 'Nunito', sans-serif; font-weight: 700; color: #F5F7FA;}");
-} else if (brancoP == "on"){
+} 
+
+else if (brancoP == "on"){ //Se a variavel brancoP estiver on, então:
   client.println("#lua { display: flex;} #sol{display: none;} li i{ cursor: pointer; font-size: 1.25em;}");
   client.println("nav a{text-decoration: none; padding: 4px 8px; border: 2px #ced3d988 solid; box-shadow: 0px 2px 2px #989EA6; border-radius: 3px; font-family: 'Nunito', sans-serif; font-weight: 700; color: #0B0C12;}");
 }
 
 client.println("main{ margin: 25px 0;}section{ margin-bottom: 25px;}section h2 {margin-bottom: 1px;font-family: 'Nunito', sans-serif;}");
 
-if(brancoP == "off"){
+if(brancoP == "off"){ //Se a variavel brancoP estiver off, então:
   client.println("p { color: #989EA6;}");
-} else if (brancoP == "on"){
+} 
+
+else if (brancoP == "on"){ //Se a variavel brancoP estiver on, então:
   client.println("p { color: #474D59;}");
 }
 
 client.println("#testar{margin-bottom: 15px} #botoes{display: grid; grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr;} #botoes div{margin-bottom: 5px;}");
 client.println(".video div { margin-bottom: 10px;} .video input { display: block; margin: 5px 0; padding: 5px;} .musica div {margin-bottom: 10px;}");
 
-  if(brancoP == "off"){
+  if(brancoP == "off"){ //Se a variavel brancoP estiver off, então:
   //botao vermelho
   client.println(".buttonRed {background: linear-gradient(360deg, #C60202 0%, #F74F2A 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #242833; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
   client.println(".buttonRed span{ background: linear-gradient(180deg,  #7D1818 0%, #610909 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
@@ -276,7 +304,7 @@ client.println(".video div { margin-bottom: 10px;} .video input { display: block
 } 
 
 
-else if (brancoP == "on"){
+else if (brancoP == "on"){ //Se a variavel brancoP estiver on, então:
   //botao vermelho
   client.println(".buttonRed {background: linear-gradient(360deg, #C60202 0%, #F74F2A 100%); border: none; padding: 16px 40px; border-radius: 4px; text-decoration: none; cursor: pointer; box-shadow: 0px 2px 2px #C0C5CC; font-size: 2em; font-family: 'Nunito', sans-serif; font-weight: 700;}");
   client.println(".buttonRed span{ background: linear-gradient(180deg,  #7D1818 0%, #610909 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; -webkit-text-fill-color: transparent;}");
@@ -330,13 +358,15 @@ client.println("<body><header><div class=\"logo\"><img src=\"https://raw.githubu
 //nav bar
   //sol e lua button
 client.println("<nav><ul> <li id=\"sol\"> <a href=\"/b/\" style=\"border: none; box-shadow:none;\"> <i class=\"fa-solid fa-sun\"> </i> </a> </li>");
-if(header.indexOf("GET /b/") >= 0 && control == "on"){
+
+if(header.indexOf("GET /b/") >= 0 && control == "on"){ // Recarrega a pagina para atualizar a cor da pagina
   brancoP = "on";
   control = "off";
   client.println("<script> function refresh(refreshPeriod) { setTimeout(\"location.reload(true);\", refreshPeriod); } window.onload = refresh(100); </script>");
 }
 client.println("<li id=\"lua\"> <a href=\"/p/\" style=\"border: none; box-shadow:none;\"> <i class=\"fa-solid fa-moon\"> </i> </a> </li>");
-if(header.indexOf("GET /p/")>= 0 && control == "off"){
+
+if(header.indexOf("GET /p/")>= 0 && control == "off"){// Recarrega a pagina para atualizar a cor da pagina
   brancoP = "off";
   control = "on";
   client.println("<script> function refresh(refreshPeriod) { setTimeout(\"location.reload(true);\", refreshPeriod); } window.onload = refresh(100); </script>");
@@ -475,11 +505,29 @@ if(header.indexOf("GET /1/ColorPick?r") >= 0 ||
 
 //APAGA TODAS AS CORES
 client.println("<div><p> Apague o Led aqui </p>");
-client.println("<p><a href=\"/3/off\"><button class=\"button buttonOff\"> <span> OFF </span> </button></a></p></div>");
-if(header.indexOf("GET /3/off") >=0){
+
+if (controlOff == "off"){ //se a variavel de controle esteja off, então imprima
+  client.println("<p><a href=\"/3/0\"><button class=\"button buttonOff\"> <span> OFF </span> </button></a></p></div>");  
+}
+
+if(controlOff == "on"){ //se a variavel de controle esteja on, então imprima
+  client.println("<p><a href=\"/3/1\"><button class=\"button buttonOff\"> <span> OFF </span> </button></a></p></div>");
+}
+
+if(header.indexOf("GET /3/0") >=0 && controlOff == "off"){ //Recarrega a pagina para atualizar as informacoes, apaga os leds e muda todas as variaveis dos leds para off
+  controlOff = "on";
   RGB_cor(0, 0, 0);
   estadoOff ();
-} client.println("</section>");
+  client.println("<script> function refresh(refreshPeriod) { setTimeout(\"location.reload(true);\", refreshPeriod); } window.onload = refresh(100); </script>");
+} 
+else if (header.indexOf("GET /3/1") >=0 && controlOff == "on"){ //Recarrega a pagina para atualizar as informacoes, apaga os leds e muda todas as variaveis dos leds para off
+  controlOff = "off";
+  RGB_cor(0, 0, 0);
+  estadoOff ();
+  client.println("<script> function refresh(refreshPeriod) { setTimeout(\"location.reload(true);\", refreshPeriod); } window.onload = refresh(100); </script>");
+}
+
+client.println("</section>");
 
 
 //MUSICA
@@ -492,7 +540,7 @@ client.println("<iframe style=\"border-radius:12px\" src=\"https://open.spotify.
 //video 
 client.println("<section class=\"video\"> <div><h2 id=\"video\">Vídeo</h2><p>Já deixamos uma recomendação de música que você pode ouvir durante a cromoterapia como forma de complementá-la, mas você pode alterar o vídeo apenas copiando e colando o link do vídeo do youtube que você quiser</p></div> ");
 client.println("<iframe id=\"iframe\" width=\"420\" height=\"315\"src=\"https://www.youtube.com/embed/9u8USeMyIwo\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>");
-client.println("<input style=\"margin: 15px 0;\" type=\"url\" name=\"url\" id=\"urlInput\" placeholder=\"Cole o link aqui :D\">");
+client.println("<input style=\"margin: 10px 0;\" type=\"url\" name=\"url\" id=\"urlInput\" placeholder=\"Cole o link aqui :D\">");
 client.println("<p><button id=\"btt\" class=\"buttonOff\"> <span> Colocar video </span> </button></p></section>");
 client.println("<script> let urlInput=document.querySelector(\"#urlInput\"); let iframe = document.querySelector(\"#iframe\"); let button = document.querySelector(\"#btt\");");
 client.println("function mudarVideo () {let id = urlInput.value; if (id[29] ==\"?\"){ id = urlInput.value.split(\"?v=\")[1]; } else { id = urlInput.value.split(\".be/\")[1];} let embedlink =\"https://www.youtube.com/embed/\" + id; iframe.src = embedlink;}");
